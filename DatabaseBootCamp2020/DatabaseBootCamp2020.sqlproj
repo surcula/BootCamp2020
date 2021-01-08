@@ -56,5 +56,39 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="Tables" />
+    <Folder Include="Procédures stockées" />
+    <Folder Include="Functions" />
+    <Folder Include="Post-Deployement" />
+    <Folder Include="Tables\Objets" />
+    <Folder Include="Tables\Users" />
+    <Folder Include="Procédures stockées\Users" />
+    <Folder Include="Procédures stockées\Books" />
+    <Folder Include="Procédures stockées\Comics" />
+    <Folder Include="Procédures stockées\Novels" />
+    <Folder Include="Views" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Tables\Objets\Books.sql" />
+    <Build Include="Tables\Objets\Comics.sql" />
+    <Build Include="Tables\Objets\Novels.sql" />
+    <Build Include="Tables\Users\Users.sql" />
+    <Build Include="Procédures stockées\Users\User_add.sql" />
+    <Build Include="Procédures stockées\Users\User_Update.sql" />
+    <Build Include="Procédures stockées\Users\User_Del.sql" />
+    <Build Include="Procédures stockées\Users\User_check.sql" />
+    <Build Include="Functions\Presalt.sql" />
+    <Build Include="Functions\PostSalt.sql" />
+    <Build Include="Functions\Salade.sql" />
+    <Build Include="Procédures stockées\Novels\Novels_add.sql" />
+    <Build Include="Procédures stockées\Novels\Novels_Del.sql" />
+    <Build Include="Procédures stockées\Novels\Novels_update.sql" />
+    <Build Include="Procédures stockées\Novels\Novels_GetOne.sql" />
+    <Build Include="Views\Novels_ViewAll.sql" />
+    <Build Include="Views\Comics_ViewAll.sql" />
+    <Build Include="Views\Books_ViewAll.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="DatabaseBootCamp2020.refactorlog" />
   </ItemGroup>
 </Project>
