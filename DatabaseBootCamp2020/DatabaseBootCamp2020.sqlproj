@@ -63,14 +63,17 @@
     <Folder Include="Tables\Objets" />
     <Folder Include="Tables\Users" />
     <Folder Include="Procédures stockées\Users" />
-    <Folder Include="Procédures stockées\Books" />
-    <Folder Include="Procédures stockées\Comics" />
+    <Folder Include="Procédures stockées\Series" />
     <Folder Include="Procédures stockées\Novels" />
     <Folder Include="Views" />
+    <Folder Include="SECURITY" />
+    <Folder Include="SECURITY\Logins" />
+    <Folder Include="SECURITY\Roles" />
+    <Folder Include="SECURITY\Uers" />
+    <Folder Include="SECURITY\Schema" />
+    <Folder Include="Procédures stockées\Types" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Tables\Objets\Books.sql" />
-    <Build Include="Tables\Objets\Comics.sql" />
     <Build Include="Tables\Objets\Novels.sql" />
     <Build Include="Tables\Users\Users.sql" />
     <Build Include="Procédures stockées\Users\User_add.sql" />
@@ -85,10 +88,26 @@
     <Build Include="Procédures stockées\Novels\Novels_update.sql" />
     <Build Include="Procédures stockées\Novels\Novels_GetOne.sql" />
     <Build Include="Views\Novels_ViewAll.sql" />
-    <Build Include="Views\Comics_ViewAll.sql" />
-    <Build Include="Views\Books_ViewAll.sql" />
+    <Build Include="SECURITY\Schema\RegChacha.sql" />
+    <Build Include="SECURITY\Uers\Seller.sql" />
+    <Build Include="SECURITY\Logins\Seller.sql" />
+    <Build Include="SECURITY\Roles\RegChacha1.sql" />
+    <Build Include="Tables\Objets\Types.sql" />
+    <Build Include="Tables\Objets\Series.sql" />
+    <Build Include="Procédures stockées\Series\Series_Add.sql" />
+    <Build Include="Procédures stockées\Series\Update_Series.sql" />
+    <Build Include="Procédures stockées\Types\Type_Add.sql" />
+    <Build Include="Procédures stockées\Types\Type_update.sql" />
+    <Build Include="Views\Series.sql" />
+    <Build Include="Views\Types.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="DatabaseBootCamp2020.refactorlog" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DatabaseBootCamp2020.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Post-Deployement\Script.PostDeployment1.sql" />
   </ItemGroup>
 </Project>

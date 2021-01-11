@@ -1,0 +1,1 @@
+﻿CREATE LOGIN [Seller] with password = 'Seller1234'

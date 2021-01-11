@@ -56,4 +56,32 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="Published" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="fea328bc-15e7-4ad7-943f-5291e75fb65d" ChangeDateTime="01/11/2021 09:10:14">
+    <Property Name="ElementName" Value="[dbo].[Books].[Author]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Books]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Authors" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="1b9074b5-1f8c-4ad6-a360-d23067171f10" ChangeDateTime="01/11/2021 09:10:21">
+    <Property Name="ElementName" Value="[dbo].[Novels].[Author]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Novels]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Authors" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="436a7b47-571a-4f60-9690-d6894de6362a" ChangeDateTime="01/11/2021 09:14:05">
+    <Property Name="ElementName" Value="[dbo].[Types].[Novels]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Types]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="type" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="998baca8-488e-44c2-aedb-e3bfeea12e19" ChangeDateTime="01/11/2021 11:01:57">
+    <Property Name="ElementName" Value="[dbo].[Novels].[Series]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Novels]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="SerieId" />
+  </Operation>
 </Operations>

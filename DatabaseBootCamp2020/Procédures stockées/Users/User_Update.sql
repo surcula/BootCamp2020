@@ -1,13 +1,13 @@
-﻿CREATE PROCEDURE [dbo].[User_Update]
-    @Id int NOT NULL,
-	@Email NVARCHAR(230) NOT NULL, 
-    @LastName NVARCHAR(50) NOT NULL, 
-    @FirstName NVARCHAR(50) NOT NULL,
-    @BirthDate DateTime2(7) NOT NULL,
-    @Address NVARCHAR(250) NOT NULL, 
-    @Cp INT NOT NULL, 
-    @Land NVARCHAR(50) NOT NULL, 
-    @Phone INT NOT NULL 
+﻿CREATE PROCEDURE [RegChacha].[User_Update]
+    @Id int ,
+	@Email NVARCHAR(230) ,
+    @LastName NVARCHAR(50),
+    @FirstName NVARCHAR(50),
+    @BirthDate DateTime2(7) ,
+    @Address NVARCHAR(250) ,
+    @Cp INT ,
+    @Land NVARCHAR(50) ,
+    @Phone INT 
 AS
 	UPDATE Users
     set [Email]= @Email ,

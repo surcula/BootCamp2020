@@ -1,0 +1,9 @@
+﻿CREATE ROLE [RegChacha1]
+GO 
+
+GRANT SELECT, EXECUTE ON SCHEMA::RegChacha To RegChacha1
+GO 
+
+ALTER ROLE [RegChacha1]
+ADD MEMBER [Seller]
+GO
