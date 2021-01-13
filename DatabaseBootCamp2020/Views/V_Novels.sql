@@ -11,6 +11,7 @@
 		[Novels].Langue,
 		[Novels].Dimension,
 		[Novels].Published,
+		[Novels].[Type]as [TypeId],
 		[Types].[type] as [Type]
 	FROM [Novels]
 	Inner join [Series] on [Novels].[SerieId] = [Series].[Id]

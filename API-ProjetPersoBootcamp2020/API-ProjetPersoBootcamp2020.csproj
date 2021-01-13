@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\API_EntitiesForm\API_EntitiesForm.csproj" />
     <ProjectReference Include="..\Api_ModelClient\Api_ModelClient.csproj" />
     <ProjectReference Include="..\Api_ModelGobal\Api_ModelGobal.csproj" />
     <ProjectReference Include="..\Bibliotheque_Repositories\Bibliotheque_Repositories.csproj" />

@@ -20,5 +20,6 @@ namespace Api_ModelGobal.Entities
         public string Dimension { get; set; }        
         public DateTime Published { get; set; }        
         public string Type { get; set; }
+        public int TypeId { get; set; }
     }
 }

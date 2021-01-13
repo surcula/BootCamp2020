@@ -22,14 +22,14 @@ namespace Api_ModelGobal.Services
             DBCommand command = new DBCommand("[RegChacha].[Novels_add]", true);
             command.AddParameter("Title", n.Title);
             command.AddParameter("Series", n.SerieId);
-            command.AddParameter("Author", n.Authors);
-            command.AddParameter("SerialNumer", n.SerialNumber);
+            command.AddParameter("Authors", n.Authors);
+            command.AddParameter("SerialNumber", n.SerialNumber);
             command.AddParameter("Price", n.Price);
             command.AddParameter("Informations", n.Informations);
             command.AddParameter("Langue", n.Langue);
             command.AddParameter("Dimension", n.Dimension);
             command.AddParameter("Published", n.Published);
-            command.AddParameter("Type", n.Type);
+            command.AddParameter("Type", n.TypeId);
             _connection.ExecuteNonQuery(command);
         }
 
@@ -62,13 +62,13 @@ namespace Api_ModelGobal.Services
             command.AddParameter("Title", n.Title);
             command.AddParameter("Series", n.SerieId);
             command.AddParameter("Author", n.Authors);
-            command.AddParameter("SerialNumer", n.SerialNumber);
+            command.AddParameter("SerialNumber", n.SerialNumber);
             command.AddParameter("Price", n.Price);
             command.AddParameter("Informations", n.Informations);
             command.AddParameter("Langue", n.Langue);
             command.AddParameter("Dimension", n.Dimension);
             command.AddParameter("Published", n.Published);
-            command.AddParameter("Type", n.Type);
+            command.AddParameter("Type", n.TypeId);
             _connection.ExecuteNonQuery(command);
         }
     }

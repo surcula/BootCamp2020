@@ -25,7 +25,9 @@ namespace Api_ModelClient.Mappers
                 Langue = n.Langue,
                 Dimension = n.Dimension,
                 Published = n.Published,
-                Type = n.Type
+                Type = n.Type,
+                TypeId = n.TypeId
+                
             };
         }
         public static Novels ToClient(this Global.Novels n)
@@ -43,7 +45,8 @@ namespace Api_ModelClient.Mappers
                 Langue = n.Langue,
                 Dimension = n.Dimension,
                 Published = n.Published,
-                Type = n.Type
+                Type = n.Type,
+                TypeId=n.TypeId,
             };
         }
         internal static Global.Series ToGlobal(this Series s)

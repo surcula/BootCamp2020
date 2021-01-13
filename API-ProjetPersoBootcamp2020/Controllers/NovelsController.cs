@@ -1,4 +1,5 @@
-﻿using Api_ModelClient.Entities;
+﻿using API_EntitiesForm;
+using Api_ModelClient.Entities;
 using Bibliotheque_Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -55,13 +56,34 @@ namespace API_ProjetPersoBootcamp2020.Controllers
         }
 
         // POST api/<NovelsController>
-        [HttpPost]
-        public IActionResult Post([FromBody] Novels novels)
+        [HttpPost("Update")]
+        public IActionResult Update([FromBody] NovelsForm novels)
         {
             try
             {
-                _repository.Update(novels);
-                return NoContent();
+                if (ModelState.IsValid)
+                {
+                    _repository.Update(new Novels(novels.Id, novels.Title, novels.SerieId, novels.Serie, novels.Authors, novels.SerialNumber,novels.Price,novels.Informations,novels.Langue,novels.Dimension,novels.Published,novels.Type,novels.TypeId)); ;
+                    return NoContent();
+                }
+                return BadRequest();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
+        [HttpPost("Add")]
+        public IActionResult Add([FromBody] NovelsForm novels)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    _repository.Add(new Novels(novels.Id, novels.Title, novels.SerieId, novels.Serie, novels.Authors, novels.SerialNumber, novels.Price, novels.Informations, novels.Langue, novels.Dimension, novels.Published, novels.Type, novels.TypeId)); ;
+                    return NoContent();
+                }
+                return BadRequest();
             }
             catch (Exception ex)
             {
@@ -77,8 +99,18 @@ namespace API_ProjetPersoBootcamp2020.Controllers
 
         // DELETE api/<NovelsController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
+            try
+            {
+                _repository.Delete(id);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
         }
     }
 }

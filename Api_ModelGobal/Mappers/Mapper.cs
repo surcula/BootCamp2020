@@ -23,7 +23,8 @@ namespace Api_ModelGobal.Mappers
                 Langue = (string)dr["Langue"],
                 Dimension = (string)dr["Dimension"],
                 Published = (DateTime)dr["Published"],
-                Type = (string)dr["Type"]
+                Type = (string)dr["Type"],
+                TypeId = (int)dr["TypeId"]
             };
         }
         internal static Series ToSeries(this IDataRecord dr)

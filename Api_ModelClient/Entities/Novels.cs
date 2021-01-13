@@ -7,7 +7,28 @@ namespace Api_ModelClient.Entities
 {
     public class Novels
     {
-       
+        public Novels()
+        {
+
+        }
+
+        public Novels(int id, string title, int serieId, string serie, string authors, string serialNumber, double price, string informations,string langue, string dimension, DateTime published, string type,int typeId)
+        {
+            Id = id;
+            Title = title;
+            SerieId = serieId;
+            Serie = serie;
+            Authors = authors;
+            SerialNumber = serialNumber;
+            Price = price;
+            Informations = informations;
+            Langue = langue;
+            Dimension = dimension;
+            Published = published;
+            Type = type;
+            TypeId = typeId;
+        }
+
         public int Id { get; set; }
         public string Title { get; set; }       
         public int SerieId { get; set; }
@@ -20,5 +41,6 @@ namespace Api_ModelClient.Entities
         public string Dimension { get; set; }        
         public DateTime Published { get; set; }        
         public string Type { get; set; }
+        public int TypeId { get; set; }
     }
 }
