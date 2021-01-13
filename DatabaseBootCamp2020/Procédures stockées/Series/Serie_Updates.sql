@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [RegChacha].[Update_Series]
+﻿CREATE PROCEDURE [RegChacha].[Series_Update]
 	@Id int,
 	@nom nvarchar(75)
 AS

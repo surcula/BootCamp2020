@@ -5,9 +5,15 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DatabaseBootCamp2020", "DatabaseBootCamp2020\DatabaseBootCamp2020.sqlproj", "{6AE3475E-8D7B-4D20-A60F-546EBDDC6777}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API-ProjetPersoBootcamp2020", "API-ProjetPersoBootcamp2020\API-ProjetPersoBootcamp2020.csproj", "{5E59CDF1-7B16-4D26-9948-A1E29576BFB4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API-ProjetPersoBootcamp2020", "API-ProjetPersoBootcamp2020\API-ProjetPersoBootcamp2020.csproj", "{5E59CDF1-7B16-4D26-9948-A1E29576BFB4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api_ModelGobal", "Api_ModelGobal\Api_ModelGobal.csproj", "{1123C949-AEA1-4A04-B9BF-BEA0CFA9C303}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api_ModelGobal", "Api_ModelGobal\Api_ModelGobal.csproj", "{1123C949-AEA1-4A04-B9BF-BEA0CFA9C303}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bibliotheque_Repositories", "Bibliotheque_Repositories\Bibliotheque_Repositories.csproj", "{B93502CA-D032-4017-8DB0-9B246EE01DC1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api_ModelClient", "Api_ModelClient\Api_ModelClient.csproj", "{9FDFDCD0-5108-47C9-98B5-4FB4AAE84C67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API_EntitiesForm", "API_EntitiesForm\API_EntitiesForm.csproj", "{A9160D2D-DA66-4BED-990C-574CDBE61C54}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,6 +35,18 @@ Global
 		{1123C949-AEA1-4A04-B9BF-BEA0CFA9C303}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1123C949-AEA1-4A04-B9BF-BEA0CFA9C303}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1123C949-AEA1-4A04-B9BF-BEA0CFA9C303}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B93502CA-D032-4017-8DB0-9B246EE01DC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B93502CA-D032-4017-8DB0-9B246EE01DC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B93502CA-D032-4017-8DB0-9B246EE01DC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B93502CA-D032-4017-8DB0-9B246EE01DC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FDFDCD0-5108-47C9-98B5-4FB4AAE84C67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FDFDCD0-5108-47C9-98B5-4FB4AAE84C67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FDFDCD0-5108-47C9-98B5-4FB4AAE84C67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FDFDCD0-5108-47C9-98B5-4FB4AAE84C67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9160D2D-DA66-4BED-990C-574CDBE61C54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9160D2D-DA66-4BED-990C-574CDBE61C54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9160D2D-DA66-4BED-990C-574CDBE61C54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9160D2D-DA66-4BED-990C-574CDBE61C54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

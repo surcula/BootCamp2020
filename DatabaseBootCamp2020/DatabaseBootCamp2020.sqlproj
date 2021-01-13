@@ -87,7 +87,6 @@
     <Build Include="Procédures stockées\Novels\Novels_Del.sql" />
     <Build Include="Procédures stockées\Novels\Novels_update.sql" />
     <Build Include="Procédures stockées\Novels\Novels_GetOne.sql" />
-    <Build Include="Views\Novels_ViewAll.sql" />
     <Build Include="SECURITY\Schema\RegChacha.sql" />
     <Build Include="SECURITY\Uers\Seller.sql" />
     <Build Include="SECURITY\Logins\Seller.sql" />
@@ -95,11 +94,12 @@
     <Build Include="Tables\Objets\Types.sql" />
     <Build Include="Tables\Objets\Series.sql" />
     <Build Include="Procédures stockées\Series\Series_Add.sql" />
-    <Build Include="Procédures stockées\Series\Update_Series.sql" />
+    <Build Include="Procédures stockées\Series\Serie_Updates.sql" />
     <Build Include="Procédures stockées\Types\Type_Add.sql" />
     <Build Include="Procédures stockées\Types\Type_update.sql" />
-    <Build Include="Views\Series.sql" />
-    <Build Include="Views\Types.sql" />
+    <Build Include="Views\V_Novels.sql" />
+    <Build Include="Views\V_Series.sql" />
+    <Build Include="Views\V_Types.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="DatabaseBootCamp2020.refactorlog" />

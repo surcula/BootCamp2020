@@ -5,10 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="ToolBox" Version="1.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\Api_ModelGobal\Api_ModelGobal.csproj" />
     <ProjectReference Include="..\Bibliotheque_Repositories\Bibliotheque_Repositories.csproj" />
   </ItemGroup>
 

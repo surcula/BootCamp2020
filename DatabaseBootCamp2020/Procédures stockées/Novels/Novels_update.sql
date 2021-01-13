@@ -1,4 +1,5 @@
 ﻿CREATE PROCEDURE [RegChacha].[Novels_update] 
+    @Id int,
     @Title NVARCHAR(50) ,
     @Series int,
     @Author NVARCHAR(50) ,
@@ -10,5 +11,18 @@
     @Published DATETIME2,
     @type int
 AS
-	INSERT INTO [Novels](title, SerieId, Authors, SerialNumber, Price, Informations, Langue, Dimension, Published,[Type]) VALUES (@Title,@Series, @Author,  @SerialNumber, @Price, @Informations, @Langue, @Dimension, @Published,@type)
-RETURN 0
+begin
+Update [Novels]
+    set title=@Title, 
+    SerieId=@Series, 
+    Authors=@Author, 
+    SerialNumber=@SerialNumber, 
+    Price=@Price, 
+    Informations=@Informations, 
+    Langue=@Langue, 
+    Dimension=@Dimension, 
+    Published=@Published,
+    [Type]=@type
+where Id=@Id
+end
+	

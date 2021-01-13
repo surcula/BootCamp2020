@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace Api_ModelGobal.Entities
+namespace Api_ModelClient.Entities
 {
     public class User
     {

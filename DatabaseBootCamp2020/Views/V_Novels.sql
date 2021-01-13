@@ -2,6 +2,7 @@
 	AS SELECT 
 		[Novels].Id,
 		[Novels].Title,
+		[Novels].SerieId,
 		[Series].Nom as [Serie],
 		[Novels].Authors,
 		[Novels].SerialNumber,
