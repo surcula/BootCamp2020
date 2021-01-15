@@ -1,40 +1,34 @@
-﻿using Client = Api_ModelClient.Entities;
-using Bibliotheque_Repositories;
+﻿using Bibliotheque_Repositories;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Global = Api_ModelGobal.Entities;
-using Api_ModelClient.Entities;
+
+
 using System.Linq;
-using Api_ModelClient.Mappers;
+using Asp_ModelGlobal.Entities;
 
 namespace Asp_ModelGlobal.Services
 {
-    public class SeriesService : ISeriesService<Client.Series>
+    public class SeriesService : ISeriesService<Series>
     {
-        private readonly ISeriesService<Global.Series> _globalSerie;
-        public SeriesService(ISeriesService<Global.Series> GlobalSerie)
+        public void Add(Entities.Series s)
         {
-            _globalSerie = GlobalSerie;
-        }
-        public void Add(Series s)
-        {
-            _globalSerie.Add(s.ToGlobal());
+            throw new NotImplementedException();
         }
 
-        public IEnumerable<Series> GetAll()
+        public IEnumerable<Entities.Series> GetAll()
         {
-            return _globalSerie.GetAll().Select(s => s.ToClient());
+            throw new NotImplementedException();
         }
 
-        public Series GetOne(int id)
+        public Entities.Series GetOne(int id)
         {
-            return _globalSerie.GetOne(id).ToClient();
+            throw new NotImplementedException();
         }
 
-        public void Update(Series s)
+        public void Update(Entities.Series s)
         {
-            _globalSerie.Update(s.ToGlobal());
+            throw new NotImplementedException();
         }
     }
 }

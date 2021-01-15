@@ -55,10 +55,10 @@ namespace Api_ModelGobal.Services
             return _connection.ExecuteReader(command, (dr) => dr.ToNovels()).SingleOrDefault();
         }
 
-        public void Update(Novels n)
+        public void Update(int id,Novels n)
         {
             DBCommand command = new DBCommand("[RegChacha].[Novels_update]", true);
-            command.AddParameter("Id", n.Id);
+            command.AddParameter("Id", id);
             command.AddParameter("Title", n.Title);
             command.AddParameter("Series", n.SerieId);
             command.AddParameter("Author", n.Authors);

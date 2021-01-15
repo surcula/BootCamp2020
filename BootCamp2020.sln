@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASP_ProjetPersoBootcamp2020
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asp_ModelGlobal", "Asp_ModelGlobal\Asp_ModelGlobal.csproj", "{3C3677E4-3C4F-4BCB-8FBD-15758D48228C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asp_ModelClient", "Asp_ModelClient\Asp_ModelClient.csproj", "{0C3E177B-3727-4130-9F16-DA4BD1CFA768}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,6 +67,10 @@ Global
 		{3C3677E4-3C4F-4BCB-8FBD-15758D48228C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C3677E4-3C4F-4BCB-8FBD-15758D48228C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C3677E4-3C4F-4BCB-8FBD-15758D48228C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C3E177B-3727-4130-9F16-DA4BD1CFA768}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C3E177B-3727-4130-9F16-DA4BD1CFA768}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C3E177B-3727-4130-9F16-DA4BD1CFA768}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C3E177B-3727-4130-9F16-DA4BD1CFA768}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -77,6 +83,7 @@ Global
 		{A9160D2D-DA66-4BED-990C-574CDBE61C54} = {74C3F651-7055-4F96-B3F1-99DDD76C8EBD}
 		{32035233-E8EA-41CB-8989-50ED94BBA591} = {C192C1AF-0DB5-422B-8A5A-FE0F9E38FE2D}
 		{3C3677E4-3C4F-4BCB-8FBD-15758D48228C} = {C192C1AF-0DB5-422B-8A5A-FE0F9E38FE2D}
+		{0C3E177B-3727-4130-9F16-DA4BD1CFA768} = {C192C1AF-0DB5-422B-8A5A-FE0F9E38FE2D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {295C0F28-902E-4B4A-9018-02CB37896594}

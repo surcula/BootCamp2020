@@ -56,14 +56,14 @@ namespace API_ProjetPersoBootcamp2020.Controllers
         }
 
         // POST api/<NovelsController>
-        [HttpPost("Update")]
-        public IActionResult Update([FromBody] NovelsForm novels)
+        [HttpPut("Update")]
+        public IActionResult Update(int id,[FromBody] NovelsForm novels)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    _repository.Update(new Novels(novels.Id, novels.Title, novels.SerieId, novels.Serie, novels.Authors, novels.SerialNumber,novels.Price,novels.Informations,novels.Langue,novels.Dimension,novels.Published,novels.Type,novels.TypeId)); ;
+                    _repository.Update(id,new Novels(novels.Title, novels.SerieId, novels.Serie, novels.Authors, novels.SerialNumber,novels.Price,novels.Informations,novels.Langue,novels.Dimension,novels.Published,novels.Type,novels.TypeId)); ;
                     return NoContent();
                 }
                 return BadRequest();
@@ -89,12 +89,6 @@ namespace API_ProjetPersoBootcamp2020.Controllers
             {
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
-        }
-
-        // PUT api/<NovelsController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
         }
 
         // DELETE api/<NovelsController>/5

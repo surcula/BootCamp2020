@@ -1,41 +1,32 @@
-﻿using Client = Api_ModelClient.Entities;
-using Bibliotheque_Repositories;
+﻿using Bibliotheque_Repositories;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Global = Api_ModelGobal.Entities;
-using Api_ModelClient.Entities;
 using System.Linq;
-using Api_ModelClient.Mappers;
+using Asp_ModelGlobal.Entities;
 
 namespace Asp_ModelGlobal.Services
 {
-    public class TypesService : ITypesRepo<Client.Types>
+    public class TypesService : ITypesRepo<Types>
     {
-        private readonly ITypesRepo<Global.Types> _globalTypes;
-        public TypesService(ITypesRepo<Global.Types> GlobalTypes)
+        public IEnumerable<Entities.Types> GetAll()
         {
-            _globalTypes = GlobalTypes;
+            throw new NotImplementedException();
         }
 
-        public IEnumerable<Types> GetAll()
+        public Entities.Types GetOne(int id)
         {
-            return _globalTypes.GetAll().Select(t => t.ToClient());
+            throw new NotImplementedException();
         }
 
-        public Types GetOne(int id)
+        public void Insert(Entities.Types t)
         {
-            return _globalTypes.GetOne(id).ToClient();
+            throw new NotImplementedException();
         }
 
-        public void Insert(Types t)
+        public void Update(Entities.Types t)
         {
-            _globalTypes.Insert(t.ToGlobal());
-        }
-
-        public void Update(Types t)
-        {
-            _globalTypes.Update(t.ToGlobal());
+            throw new NotImplementedException();
         }
     }
 }

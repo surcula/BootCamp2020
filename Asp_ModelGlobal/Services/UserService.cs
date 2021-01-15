@@ -1,45 +1,37 @@
-﻿using Client = Api_ModelClient.Entities;
-using Bibliotheque_Repositories;
+﻿using Bibliotheque_Repositories;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Global = Api_ModelGobal.Entities;
-using Api_ModelClient.Entities;
 using System.Linq;
-using Api_ModelClient.Mappers;
+using Asp_ModelGlobal.Entities;
 
 namespace Asp_ModelGlobal.Services
 {
-    public class UserService : IUserService<Client.User>
+    public class UserService : IUserService<User>
     {
-        private readonly IUserService<Global.User> _globalUser;
-        public UserService(IUserService<Global.User> GlobalUser)
-        {
-            _globalUser = GlobalUser;
-        }
         public void Delete(int id)
         {
-            _globalUser.Delete(id);
+            throw new NotImplementedException();
         }
 
         public IEnumerable<User> GetAll()
         {
-            return _globalUser.GetAll().Select(u => u.ToClient());
+            throw new NotImplementedException();
         }
 
         public User GetOne(int id)
         {
-            return _globalUser.GetOne(id).ToClient();
+            throw new NotImplementedException();
         }
 
         public void Insert(User u)
         {
-            _globalUser.Insert(u.ToGlobal());
+            throw new NotImplementedException();
         }
 
         public void Update(User u)
         {
-            _globalUser.Update(u.ToGlobal());
+            throw new NotImplementedException();
         }
     }
 }

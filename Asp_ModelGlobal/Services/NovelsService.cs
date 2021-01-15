@@ -26,26 +26,54 @@ namespace Asp_ModelGlobal.Services
                 httpContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
 
                 HttpResponseMessage httpResponseMessage = _client.PostAsync($"api/Novels/Add",httpContent).Result;
+                httpResponseMessage.EnsureSuccessStatusCode();
             }
         }
 
         public void Delete(int id)
         {
-            _globalNovels.Delete(id);
+            
+            HttpResponseMessage httpResponseMessage = _client.DeleteAsync($"api/Novels/delete/{id}").Result;
+            httpResponseMessage.EnsureSuccessStatusCode();
         }
 
         public IEnumerable<Novels> GetAll()
         {
-            return _globalNovels.GetAll().Select(n => n.ToClient());
+            using (_client)
+            {
+                HttpResponseMessage httpResponseMessage = _client.GetAsync($"api/Novels/").Result;
+                httpResponseMessage.EnsureSuccessStatusCode();
+                string json = httpResponseMessage.Content.ReadAsStringAsync().Result;
+
+                //Attention faut envoyer un tableau de l'objet, Il risque de vouloir instancer IEnumerable mais c'est une interface.
+                return JsonSerializer.Deserialize<IEnumerable<Novels>>(json, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+            }
         }        
 
         public Novels GetOne(int id)
         {
-            return _globalNovels.GetOne(id).ToClient();            
+            using (_client)
+            {
+
+                HttpResponseMessage httpResponseMessage = _client.GetAsync($"api/Novels/{id}").Result;
+                httpResponseMessage.EnsureSuccessStatusCode();
+                string json = httpResponseMessage.Content.ReadAsStringAsync().Result;
+                return JsonSerializer.Deserialize<Novels>(json, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+            }
         }       
-        public void Update(Novels n)
+        public void Update(int id,Novels n)
         {
-            _globalNovels.Update(n.ToGobal()); 
+            using (_client)
+            {
+                string json = JsonSerializer.Serialize(n);
+                HttpContent httpcontent = new StringContent(json);
+                httpcontent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
+
+
+                HttpResponseMessage httpResponseMessage = _client.PutAsync($"api/Novels/update/{id}",httpcontent).Result;
+                httpResponseMessage.EnsureSuccessStatusCode();
+            }
+
         }
     }
 }

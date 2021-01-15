@@ -1,3 +1,8 @@
+using Asp_ModelClient.Entities;
+using Asp_ModelClient.Services;
+using GNovels = Asp_ModelGlobal.Entities.Novels;
+using GNovelsService = Asp_ModelGlobal.Services.NovelsService;
+using Bibliotheque_Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -8,6 +13,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Net.Http;
+using System.Net.Http.Headers;
 
 namespace ASP_ProjetPersoBootcamp2020
 {
@@ -24,6 +31,24 @@ namespace ASP_ProjetPersoBootcamp2020
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            //services.AddDistributedMemoryCache();
+            //services.AddHttpContextAccessor();
+            //services.AddSession(options =>
+            //{
+            //    options.IdleTimeout = TimeSpan.FromSeconds(3600);
+            //    options.Cookie.HttpOnly = true;
+            //    options.Cookie.IsEssential = true;
+            //});
+            services.AddTransient(sp =>
+            {
+                HttpClient client = new HttpClient() { BaseAddress = new Uri("http://localhost:62814") };
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Clear();
+                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                return client;
+            });
+            services.AddScoped<INovelsService<GNovels>,GNovelsService>();
+            services.AddScoped<INovelsService<Novels>,NovelsService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

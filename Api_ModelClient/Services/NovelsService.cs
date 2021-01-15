@@ -37,9 +37,9 @@ namespace Api_ModelClient.Services
         {
             return _globalNovels.GetOne(id).ToClient();            
         }       
-        public void Update(Novels n)
+        public void Update(int id,Novels n)
         {
-            _globalNovels.Update(n.ToGobal()); 
+            _globalNovels.Update(id,n.ToGobal()); 
         }
     }
 }

@@ -8,6 +8,6 @@ namespace Bibliotheque_Repositories
         void Delete(int id);
         IEnumerable<Tentity> GetAll();
         Tentity GetOne(int id);
-        void Update(Tentity n);
+        void Update(int id,Tentity n);
     }
 }
