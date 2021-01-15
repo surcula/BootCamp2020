@@ -7,7 +7,15 @@ namespace Api_ModelClient.Entities
 {
     public class Series
     {
- 
+        public Series(int id, string nom)
+        {
+            Id = id;
+            Nom = nom;
+        }
+        public Series()
+        {
+
+        }
         public int Id { get; set; }
 
         public string Nom { get; set; }

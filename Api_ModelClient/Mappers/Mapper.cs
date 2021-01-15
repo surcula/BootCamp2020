@@ -102,7 +102,7 @@ namespace Api_ModelClient.Mappers
         }
         internal static User ToClient(this Global.User u)
         {
-            return new User 
+            return new User
             {
                 Id = u.Id,
                 Email = u.Email,

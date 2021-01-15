@@ -25,13 +25,13 @@ namespace Api_ModelGobal.Services
 
         public IEnumerable<User> GetAll()
         {
-            DBCommand command = new DBCommand("Select * from [RegChacha].[V_Types]");
+            DBCommand command = new DBCommand("Select * from [RegChacha].[V_User]");
             return _connection.ExecuteReader(command, (dr) => dr.ToUser()); 
         }
 
         public User GetOne(int id)
         {
-            DBCommand command = new DBCommand("Select * from [RegChacha].[V_Types] where id = @id");
+            DBCommand command = new DBCommand("Select * from [RegChacha].[V_User] where id = @id");
             command.AddParameter("id", id);
             return _connection.ExecuteReader(command, (dr) => dr.ToUser()).SingleOrDefault(); 
         }

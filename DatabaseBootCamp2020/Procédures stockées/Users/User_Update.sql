@@ -7,7 +7,7 @@
     @Address NVARCHAR(250) ,
     @Cp INT ,
     @Land NVARCHAR(50) ,
-    @Phone INT 
+    @Phone nvarchar(12) 
 AS
 	UPDATE Users
     set [Email]= @Email ,

@@ -9,6 +9,6 @@
     [Address] NVARCHAR(250) NOT NULL, 
     [Cp] INT NOT NULL, 
     [Land] NVARCHAR(50) NOT NULL, 
-    [Phone] INT NOT NULL, 
+    [Phone] NVARCHAR(12) NOT NULL, 
     CONSTRAINT [PK_Users] PRIMARY KEY ([Id]) 
 )

@@ -25,7 +25,7 @@ namespace Api_ModelGobal.Entities
         public int Cp { get; set; }
         public string Land { get; set; }
 
-        public int Phone { get; set; }
+        public string Phone { get; set; }
 
     }
 }

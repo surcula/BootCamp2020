@@ -1,12 +1,12 @@
-﻿CREATE VIEW [dbo].[V_User]
+﻿CREATE VIEW [RegChacha].[V_User]
 	AS SELECT 
-	[Email],
-	[LastName],
-	[FirstName],
-	[BirthDate],
-	[Address],
-	[Cp],
-	[Land],
-	[Phone]
-	
+	[Id] ,
+    [Email] ,
+    [LastName],
+    [FirstName],
+    [BirthDate] ,
+    [Address] ,
+    [Cp] ,
+    [Land],
+    [Phone]
 	FROM [Users]

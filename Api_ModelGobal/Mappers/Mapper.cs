@@ -49,14 +49,14 @@ namespace Api_ModelGobal.Mappers
             {
                 Id = (int)dr["Id"],
                 Email = (string)dr["Email"],
-                Passwd = (string)dr["passwd"],
+                Passwd = "",
                 LastName = (string)dr["LastName"],
                 FirstName = (string)dr["FirstName"],
                 Birthdate = (DateTime)dr["Birthdate"],
                 Address = (string)dr["Address"],
                 Cp = (int)dr["Cp"],
                 Land = (string)dr["Land"],
-                Phone = (int)dr["Phone"]
+                Phone = (string)dr["Phone"]
 
             };
         }

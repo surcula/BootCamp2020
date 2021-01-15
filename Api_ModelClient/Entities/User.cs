@@ -7,7 +7,23 @@ namespace Api_ModelClient.Entities
 {
     public class User
     {
-       
+        public User(int id, string email, string passwd, string lastName, string firstName, DateTime birthdate, string address, int cp, string land, string phone)
+        {
+            Id = id;
+            Email = email;
+            Passwd = passwd;
+            LastName = lastName;
+            FirstName = firstName;
+            Birthdate = birthdate;
+            Address = address;
+            Cp = cp;
+            Land = land;
+            Phone = phone;
+        }
+        public User()
+        {
+
+        }
         public int Id { get; set; }
        
         public string Email { get; set; }
@@ -25,7 +41,7 @@ namespace Api_ModelClient.Entities
         public int Cp { get; set; }
         public string Land { get; set; }
 
-        public int Phone { get; set; }
-
+        public string Phone { get; set; }
+     
     }
 }

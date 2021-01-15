@@ -7,7 +7,7 @@
     @Address NVARCHAR(250) , 
     @Cp INT , 
     @Land NVARCHAR(50), 
-    @Phone INT 
+    @Phone nvarchar(12) 
 AS
 	INSERT INTO Users ([Email], [Passwd],[LastName],[FirstName],[BirthDate],[Address],[Cp],[Land],[Phone]) VALUES (
     @Email,dbo.salade(@Password),@LastName,@FirstName,@BirthDate,@Address,@Cp,@Land,@Phone)

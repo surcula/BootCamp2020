@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using API_EntitiesForm;
+using Api_ModelClient.Entities;
+using Bibliotheque_Repositories;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,36 +16,90 @@ namespace API_ProjetPersoBootcamp2020.Controllers
     [ApiController]
     public class SeriesController : ControllerBase
     {
+        private readonly ISeriesService<Series> _repository;
+        public SeriesController(ISeriesService<Series> repository)
+        {
+            _repository = repository;
+        }
         // GET: api/<SeriesController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+            try
+            {
+                IEnumerable<Series> series = _repository.GetAll();
+                return Ok(series);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
         }
 
         // GET api/<SeriesController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public IActionResult Get(int id)
         {
-            return "value";
+            try
+            {
+                Series series = _repository.GetOne(id);
+                return Ok(series);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
         }
 
         // POST api/<SeriesController>
-        [HttpPost]
-        public void Post([FromBody] string value)
+        [HttpPost("Add")]
+        public IActionResult Post([FromBody] SeriesForm seriesForm)
         {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    _repository.Add(new Series(seriesForm.Id,seriesForm.Nom));
+                    return Ok();
+
+                }
+                else
+                    return BadRequest();
+                 
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
         }
 
         // PUT api/<SeriesController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut("update")]
+        public IActionResult Put([FromBody] SeriesForm seriesForm)
         {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    _repository.Update(new Series(seriesForm.Id, seriesForm.Nom));
+                    return Ok();
+
+                }
+                else
+                    return BadRequest();
+
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
         }
 
         // DELETE api/<SeriesController>/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            
         }
     }
 }

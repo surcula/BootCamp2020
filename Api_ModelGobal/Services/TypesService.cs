@@ -31,7 +31,7 @@ namespace Api_ModelGobal.Services
 
         public void Insert(Types t)
         {
-            DBCommand command = new DBCommand("[RegChacha].[Types_Add]", true);
+            DBCommand command = new DBCommand("[RegChacha].[Type_Add]", true);
             command.AddParameter("Type", t.Type);
             _connection.ExecuteNonQuery(command);
         }

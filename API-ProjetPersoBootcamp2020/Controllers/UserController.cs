@@ -1,4 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using API_EntitiesForm;
+using Api_ModelClient.Entities;
+using Bibliotheque_Repositories;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,26 +16,77 @@ namespace API_ProjetPersoBootcamp2020.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
+        private readonly IUserService<User> _repository;
+        public UserController(IUserService<User> repository)
+        {
+            _repository = repository;
+        }
         // GET: api/<UserController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public IActionResult Get()
         {
-            return new string[] { "value1", "value2" };
+            try
+            {
+                IEnumerable<User> novels = _repository.GetAll();
+                return Ok(novels);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
         }
 
         // GET api/<UserController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public IActionResult Get(int id)
         {
-            return "value";
+            try
+            {
+                User novels = _repository.GetOne(id);
+                return Ok(novels);
+            }
+            catch (Exception ex)
+            {
+
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
         }
 
         // POST api/<UserController>
-        [HttpPost]
-        public void Post([FromBody] string value)
+        [HttpPost("Update")]
+        public IActionResult Update([FromBody] UserForm user)
         {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    _repository.Update(new User(user.Id, user.Email, user.Passwd,user.LastName,user.FirstName,user.Birthdate,user.Address,user.Cp,user.Land,user.Phone)) ;
+                    return NoContent();
+                }
+                return BadRequest();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
         }
-
+        [HttpPost("Add")]
+        public IActionResult Add([FromBody] UserForm user)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    _repository.Insert(new User(user.Id, user.Email, user.Passwd, user.LastName, user.FirstName, user.Birthdate, user.Address, user.Cp, user.Land, user.Phone));
+                    return NoContent();
+                }
+                return BadRequest();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
+        }
         // PUT api/<UserController>/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
@@ -40,8 +95,18 @@ namespace API_ProjetPersoBootcamp2020.Controllers
 
         // DELETE api/<UserController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
+            try
+            {
+                _repository.Delete(id);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+
+                return StatusCode(StatusCodes.Status500InternalServerError);
+            }
         }
     }
 }
