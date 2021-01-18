@@ -32,9 +32,12 @@ namespace Asp_ModelGlobal.Services
 
         public void Delete(int id)
         {
+            using(_client)
+            {                
+                HttpResponseMessage httpResponseMessage = _client.DeleteAsync($"api/Novels/delete/{id}").Result;
+                httpResponseMessage.EnsureSuccessStatusCode();
+            }
             
-            HttpResponseMessage httpResponseMessage = _client.DeleteAsync($"api/Novels/delete/{id}").Result;
-            httpResponseMessage.EnsureSuccessStatusCode();
         }
 
         public IEnumerable<Novels> GetAll()

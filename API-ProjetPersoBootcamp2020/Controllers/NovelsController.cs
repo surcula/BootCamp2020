@@ -102,7 +102,6 @@ namespace API_ProjetPersoBootcamp2020.Controllers
             }
             catch (Exception ex)
             {
-
                 return StatusCode(StatusCodes.Status500InternalServerError);
             }
         }

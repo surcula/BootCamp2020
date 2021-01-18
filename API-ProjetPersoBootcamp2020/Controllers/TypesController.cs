@@ -83,7 +83,6 @@ namespace API_ProjetPersoBootcamp2020.Controllers
                 {
                     _repository.Update(new Types(typesForm.Id, typesForm.Type));
                     return Ok();
-
                 }
                 else
                     return BadRequest();
