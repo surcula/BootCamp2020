@@ -16,8 +16,8 @@ namespace API_ProjetPersoBootcamp2020.Controllers
     [ApiController]
     public class TypesController : ControllerBase
     {
-        private readonly ITypesRepo<Types> _repository;
-        public TypesController(ITypesRepo<Types> repository)
+        private readonly ITypesService<Types> _repository;
+        public TypesController(ITypesService<Types> repository)
         {
             _repository = repository;
         }
@@ -75,13 +75,13 @@ namespace API_ProjetPersoBootcamp2020.Controllers
 
         // PUT api/<SeriesController>/5
         [HttpPut("update")]
-        public IActionResult Put([FromBody] TypesForm typesForm)
+        public IActionResult Put(int id,[FromBody] TypesForm typesForm)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    _repository.Update(new Types(typesForm.Id, typesForm.Type));
+                    _repository.Update(id,new Types(typesForm.Type));
                     return Ok();
                 }
                 else

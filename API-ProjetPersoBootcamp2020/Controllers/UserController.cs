@@ -54,13 +54,13 @@ namespace API_ProjetPersoBootcamp2020.Controllers
 
         // POST api/<UserController>
         [HttpPost("Update")]
-        public IActionResult Update([FromBody] UserForm user)
+        public IActionResult Update(int id,[FromBody] UserForm user)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    _repository.Update(new User(user.Id, user.Email, user.Passwd,user.LastName,user.FirstName,user.Birthdate,user.Address,user.Cp,user.Land,user.Phone)) ;
+                    _repository.Update(id, new User(id,user.Email, user.Passwd,user.LastName,user.FirstName,user.Birthdate,user.Address,user.Cp,user.Land,user.Phone)) ;
                     return NoContent();
                 }
                 return BadRequest();

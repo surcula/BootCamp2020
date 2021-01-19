@@ -1,0 +1,78 @@
+﻿@model ASP_ProjetPersoBootcamp2020.Models.NovelsForm
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>NovelsForm</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>           
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SerieId" class="control-label"></label>
+                @Html.DropDownListFor(x => Model.SerieId, new SelectList(Model.Series, "Value", "Text"), htmlAttributes: new {@class = "form-control", @id = "SerieId" })
+                @Html.ValidationMessageFor(x => x.SerieId, "", new {@class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label asp-for="Authors" class="control-label"></label>
+                <input asp-for="Authors" class="form-control" />
+                <span asp-validation-for="Authors" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SerialNumber" class="control-label"></label>
+                <input asp-for="SerialNumber" class="form-control" />
+                <span asp-validation-for="SerialNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Informations" class="control-label"></label>
+                <input asp-for="Informations" class="form-control" />
+                <span asp-validation-for="Informations" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Langue" class="control-label"></label>
+                <input asp-for="Langue" class="form-control" />
+                <span asp-validation-for="Langue" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dimension" class="control-label"></label>
+                <input asp-for="Dimension" class="form-control" />
+                <span asp-validation-for="Dimension" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Published" class="control-label"></label>
+                <input asp-for="Published" class="form-control" />
+                <span asp-validation-for="Published" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TypeId" class="control-label"></label>
+                @Html.DropDownListFor(x => Model.TypeId, new SelectList(Model.Types, "Value", "Text"), htmlAttributes: new { @class = "form-control", @id = "TypeId" })
+                @Html.ValidationMessageFor(x => x.TypeId, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

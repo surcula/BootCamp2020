@@ -36,10 +36,10 @@ namespace Api_ModelGobal.Services
             return _connection.ExecuteReader(command, (dr) => dr.ToSeries()).SingleOrDefault();
         }
 
-        public void Update(Series s)
+        public void Update(int id,Series s)
         {
             DBCommand command = new DBCommand("[RegChacha].[Series_Update]", true);
-            command.AddParameter("Id", s.Id);
+            command.AddParameter("Id", id);
             command.AddParameter("Nom", s.Nom);
             _connection.ExecuteNonQuery(command);
         }

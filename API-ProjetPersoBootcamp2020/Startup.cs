@@ -51,8 +51,8 @@ namespace API_ProjetPersoBootcamp2020
             services.AddSingleton<INovelsService<Novels>,NovelsService>();
             services.AddSingleton<ISeriesService<GSerie>, GSeriessService>();
             services.AddSingleton<ISeriesService<Series>, SeriesService>();
-            services.AddSingleton<ITypesRepo<GType>, GTypesService>();
-            services.AddSingleton<ITypesRepo<Types>, TypesService>();            
+            services.AddSingleton<ITypesService<GType>, GTypesService>();
+            services.AddSingleton<ITypesService<Types>, TypesService>();            
             services.AddSingleton<IUserService<GUser>, GUserService>();
             services.AddSingleton<IUserService<User>, UserService>();
 

@@ -10,10 +10,10 @@ using Api_ModelClient.Mappers;
 
 namespace Api_ModelClient.Services
 {
-    public class TypesService : ITypesRepo<Client.Types>
+    public class TypesService : ITypesService<Client.Types>
     {
-        private readonly ITypesRepo<Global.Types> _globalTypes;
-        public TypesService(ITypesRepo<Global.Types> GlobalTypes)
+        private readonly ITypesService<Global.Types> _globalTypes;
+        public TypesService(ITypesService<Global.Types> GlobalTypes)
         {
             _globalTypes = GlobalTypes;
         }
@@ -33,9 +33,9 @@ namespace Api_ModelClient.Services
             _globalTypes.Insert(t.ToGlobal());
         }
 
-        public void Update(Types t)
+        public void Update(int id,Types t)
         {
-            _globalTypes.Update(t.ToGlobal());
+            _globalTypes.Update(id,t.ToGlobal());
         }
     }
 }

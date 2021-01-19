@@ -4,29 +4,66 @@ using System.Collections.Generic;
 using System.Text;
 using System.Linq;
 using Asp_ModelGlobal.Entities;
+using System.Text.Json;
+using System.Net.Http;
+using API_EntitiesForm;
 
 namespace Asp_ModelGlobal.Services
 {
-    public class TypesService : ITypesRepo<Types>
+    public class TypesService : ITypesService<Types>
     {
-        public IEnumerable<Entities.Types> GetAll()
+        private readonly HttpClient _client;
+        public TypesService(HttpClient client)
         {
-            throw new NotImplementedException();
+            _client = client;
+        }
+        public IEnumerable<Types> GetAll()
+        {
+            using (_client)
+            {
+                HttpResponseMessage httpResponseMessage = _client.GetAsync($"api/Types/").Result;
+                httpResponseMessage.EnsureSuccessStatusCode();
+                string json = httpResponseMessage.Content.ReadAsStringAsync().Result;
+
+                //Attention faut envoyer un tableau de l'objet, Il risque de vouloir instancer IEnumerable mais c'est une interface.
+                return JsonSerializer.Deserialize<IEnumerable<Types>>(json, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+            }
         }
 
         public Entities.Types GetOne(int id)
         {
-            throw new NotImplementedException();
+            using (_client)
+            {
+                HttpResponseMessage httpResponseMessage = _client.GetAsync($"api/Types/{id}").Result;
+                httpResponseMessage.EnsureSuccessStatusCode();
+                string json = httpResponseMessage.Content.ReadAsStringAsync().Result;
+                return JsonSerializer.Deserialize<Types>(json, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+
+            }
         }
 
-        public void Insert(Entities.Types t)
+        public void Insert(Types t)
         {
-            throw new NotImplementedException();
+            using (_client)
+            {
+                string contentJson = JsonSerializer.Serialize(t);
+                HttpContent httpContent = new StringContent(contentJson);
+                httpContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
+
+                HttpResponseMessage httpResponseMessage = _client.PostAsync($"api/Types/Add", httpContent).Result;
+                httpResponseMessage.EnsureSuccessStatusCode();
+            }
         }
 
-        public void Update(Entities.Types t)
+        public void Update(int id,Types t)
         {
-            throw new NotImplementedException();
+            t.Id = id;
+            string contentJson = JsonSerializer.Serialize(t);
+            HttpContent httpContent = new StringContent(contentJson);
+            httpContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
+
+            HttpResponseMessage httpResponseMessage = _client.PostAsync($"api/Types/update", httpContent).Result;
+            httpResponseMessage.EnsureSuccessStatusCode();
         }
     }
 }

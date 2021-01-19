@@ -7,6 +7,7 @@ namespace Bibliotheque_Repositories
         void Add(Tentity s);
         IEnumerable<Tentity> GetAll();
         Tentity GetOne(int id);
-        void Update(Tentity s);
+        void Update(int id, Tentity s);
+        
     }
 }

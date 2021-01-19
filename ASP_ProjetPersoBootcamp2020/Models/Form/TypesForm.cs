@@ -3,24 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace API_EntitiesForm
+namespace ASP_ProjetPersoBootcamp2020.Models
 {
     public class TypesForm
     {
-        private object id;
-        private object nom;
-
-        public TypesForm(object nom)
-        {
-            this.nom = nom;
-        }
-
-        public TypesForm(object id, object nom)
-        {
-            this.id = id;
-            this.nom = nom;
-        }
-
         [Required]
         public int Id { get; set; }
         [Required]

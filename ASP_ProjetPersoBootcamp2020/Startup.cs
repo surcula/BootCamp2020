@@ -2,6 +2,13 @@ using Asp_ModelClient.Entities;
 using Asp_ModelClient.Services;
 using GNovels = Asp_ModelGlobal.Entities.Novels;
 using GNovelsService = Asp_ModelGlobal.Services.NovelsService;
+using GSerie = Asp_ModelGlobal.Entities.Series;
+using GSeriesService = Asp_ModelGlobal.Services.SeriesService;
+using Gtype = Asp_ModelGlobal.Entities.Types;
+using GtypeService = Asp_ModelGlobal.Services.TypesService;
+using GUser = Asp_ModelGlobal.Entities.User;
+using GUserService = Asp_ModelGlobal.Services.UserService;
+
 using Bibliotheque_Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -47,8 +54,18 @@ namespace ASP_ProjetPersoBootcamp2020
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 return client;
             });
+            // Attention : le service du modelClient doit pointer sur le meme entitie (client ou global)
             services.AddScoped<INovelsService<GNovels>,GNovelsService>();
             services.AddScoped<INovelsService<Novels>,NovelsService>();
+
+            services.AddScoped<ISeriesService<GSerie>, GSeriesService>();
+            services.AddScoped<ISeriesService<Series>, SeriesService>();
+
+            services.AddScoped<ITypesService<Gtype>, GtypeService>();
+            services.AddScoped<ITypesService<Types>, TypesService>();
+
+            services.AddScoped<IUserService<GUser>, GUserService>();
+            services.AddScoped<IUserService<User>, UserService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

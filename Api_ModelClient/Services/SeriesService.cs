@@ -32,9 +32,9 @@ namespace Api_ModelClient.Services
             return _globalSerie.GetOne(id).ToClient();
         }
 
-        public void Update(Series s)
+        public void Update(int id,Series s)
         {
-            _globalSerie.Update(s.ToGlobal());
+            _globalSerie.Update(id,s.ToGlobal());
         }
     }
 }

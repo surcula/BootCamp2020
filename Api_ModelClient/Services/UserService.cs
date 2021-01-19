@@ -37,9 +37,9 @@ namespace Api_ModelClient.Services
             _globalUser.Insert(u.ToGlobal());
         }
 
-        public void Update(User u)
+        public void Update(int id, User u)
         {
-            _globalUser.Update(u.ToGlobal());
+            _globalUser.Update(id,u.ToGlobal());
         }
     }
 }

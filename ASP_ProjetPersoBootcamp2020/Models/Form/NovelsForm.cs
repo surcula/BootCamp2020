@@ -1,32 +1,18 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace API_EntitiesForm
+namespace ASP_ProjetPersoBootcamp2020.Models
 {
     public class NovelsForm
     {
-        public NovelsForm(string title, int serieId, string authors, string serialNumber, double price, string informations, string langue, string dimension, DateTime published, int typeId)
-        {
-            Title = title;
-            SerieId = serieId;
-            Authors = authors;
-            SerialNumber = serialNumber;
-            Price = price;
-            Informations = informations;
-            Langue = langue;
-            Dimension = dimension;
-            Published = published;
-            TypeId = typeId;
-        }
-
         public NovelsForm()
         {
-
         }
 
-        public NovelsForm(int id, string title, int serieId, string authors, string serialNumber, double price, string informations, string langue, string dimension, DateTime published, int typeId)
+        public NovelsForm(int id, string title, int serieId,string authors, string serialNumber, double price, string informations, string langue, string dimension, DateTime published, int typeId)
         {
             Id = id;
             Title = title;
@@ -40,17 +26,15 @@ namespace API_EntitiesForm
             Published = published;
             TypeId = typeId;
         }
-
+       
         [Required]
         public int Id { get; set; }
         [Required]
         [MaxLength(50)]
         public string Title { get; set; }
         [Required]
-        public int SerieId { get; set; }
-        [Required]
-        [MaxLength(75)]
-        public string Serie { get; set; }
+        public int SerieId { get; set; } 
+        public IEnumerable<SelectListItem> Series { get; set; }
         [Required]
         [MaxLength(50)]
         public string Authors { get; set; }
@@ -71,9 +55,7 @@ namespace API_EntitiesForm
         [Required]
         [DataType(DataType.Date)]
         public DateTime Published { get; set; }
-        [Required]
-        [MaxLength(50)]
-        public string Type { get; set; }
         public int TypeId { get; set; }
+        public IEnumerable<SelectListItem> Types { get; set; }
     }
 }

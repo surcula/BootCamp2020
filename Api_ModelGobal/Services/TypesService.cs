@@ -9,7 +9,7 @@ using ToolBox;
 
 namespace Api_ModelGobal.Services
 {
-    public class TypesService : ITypesRepo<Types>
+    public class TypesService : ITypesService<Types>
     {
         private readonly IConnection _connection;
         public TypesService(IConnection connection)
@@ -36,10 +36,10 @@ namespace Api_ModelGobal.Services
             _connection.ExecuteNonQuery(command);
         }
 
-        public void Update(Types t)
+        public void Update(int id,Types t)
         {
             DBCommand command = new DBCommand("[RegChacha].[Type_Update]", true);
-            command.AddParameter("Id", t.Id);
+            command.AddParameter("Id", id);
             command.AddParameter("Type", t.Type);
             _connection.ExecuteNonQuery(command);
         }

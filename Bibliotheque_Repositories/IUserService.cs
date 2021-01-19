@@ -8,6 +8,6 @@ namespace Bibliotheque_Repositories
         IEnumerable<Tentity> GetAll();
         Tentity GetOne(int id);
         void Insert(Tentity u);
-        void Update(Tentity u);
+        void Update(int id,Tentity u);
     }
 }

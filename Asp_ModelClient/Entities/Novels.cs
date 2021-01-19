@@ -11,22 +11,20 @@ namespace Asp_ModelClient.Entities
 
         }
 
-        public Novels(int id, string title, int serieId, string serie, string authors, string serialNumber, double price, string informations, string langue, string dimension, DateTime published, string type, int typeId)
+        public Novels(int id, string title, int serieId, string authors, string serialNumber, double price, string informations, string langue, string dimension, DateTime published, int typeId)
         {
             Id = id;
             Title = title;
             SerieId = serieId;
-            Serie = serie;
             Authors = authors;
             SerialNumber = serialNumber;
             Price = price;
             Informations = informations;
             Langue = langue;
             Dimension = dimension;
-            Published = published;
-            Type = type;
             TypeId = typeId;
         }
+
 
         public int Id { get; set; }
         public string Title { get; set; }

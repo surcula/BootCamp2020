@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace Api_ModelClient.Entities
+namespace Asp_ModelClient.Entities
 {
     public class Types
     {
@@ -15,11 +15,6 @@ namespace Api_ModelClient.Entities
         public Types()
         {
 
-        }
-
-        public Types(string type)
-        {
-            Type = type;
         }
 
         public int Id { get; set; }

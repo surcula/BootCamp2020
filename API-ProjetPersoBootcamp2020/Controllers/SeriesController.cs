@@ -75,13 +75,13 @@ namespace API_ProjetPersoBootcamp2020.Controllers
 
         // PUT api/<SeriesController>/5
         [HttpPut("update")]
-        public IActionResult Put([FromBody] SeriesForm seriesForm)
+        public IActionResult Put(int id,[FromBody] SeriesForm seriesForm)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    _repository.Update(new Series(seriesForm.Id, seriesForm.Nom));
+                    _repository.Update(id,new Series(seriesForm.Nom));
                     return Ok();
 
                 }

@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\API_EntitiesForm\API_EntitiesForm.csproj" />
     <ProjectReference Include="..\Bibliotheque_Repositories\Bibliotheque_Repositories.csproj" />
   </ItemGroup>
 

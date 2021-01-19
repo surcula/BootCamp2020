@@ -57,7 +57,6 @@ namespace Api_ModelGobal.Mappers
                 Cp = (int)dr["Cp"],
                 Land = (string)dr["Land"],
                 Phone = (string)dr["Phone"]
-
             };
         }
     }

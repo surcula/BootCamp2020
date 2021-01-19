@@ -51,10 +51,10 @@ namespace Api_ModelGobal.Services
             _connection.ExecuteNonQuery(command);
         }
 
-        public void Update(User u)
+        public void Update(int id,User u)
         {
             DBCommand command = new DBCommand("[RegChacha].[User_update]", true);
-            command.AddParameter("id", u.Id);
+            command.AddParameter("id", id);
             command.AddParameter("Email", u.Email);
             command.AddParameter("Password", u.Passwd);
             command.AddParameter("FirstName", u.FirstName);

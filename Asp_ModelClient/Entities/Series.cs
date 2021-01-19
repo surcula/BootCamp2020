@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace Api_ModelClient.Entities
+namespace Asp_ModelClient.Entities
 {
     public class Series
     {
@@ -14,14 +14,7 @@ namespace Api_ModelClient.Entities
         }
         public Series()
         {
-
         }
-
-        public Series(string nom)
-        {
-            Nom = nom;
-        }
-
         public int Id { get; set; }
 
         public string Nom { get; set; }

@@ -21,11 +21,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataBase", "DataBase", "{D7
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AspMvc", "AspMvc", "{C192C1AF-0DB5-422B-8A5A-FE0F9E38FE2D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ASP_ProjetPersoBootcamp2020", "ASP_ProjetPersoBootcamp2020\ASP_ProjetPersoBootcamp2020.csproj", "{32035233-E8EA-41CB-8989-50ED94BBA591}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ASP_ProjetPersoBootcamp2020", "ASP_ProjetPersoBootcamp2020\ASP_ProjetPersoBootcamp2020.csproj", "{32035233-E8EA-41CB-8989-50ED94BBA591}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asp_ModelGlobal", "Asp_ModelGlobal\Asp_ModelGlobal.csproj", "{3C3677E4-3C4F-4BCB-8FBD-15758D48228C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Asp_ModelGlobal", "Asp_ModelGlobal\Asp_ModelGlobal.csproj", "{3C3677E4-3C4F-4BCB-8FBD-15758D48228C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asp_ModelClient", "Asp_ModelClient\Asp_ModelClient.csproj", "{0C3E177B-3727-4130-9F16-DA4BD1CFA768}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Asp_ModelClient", "Asp_ModelClient\Asp_ModelClient.csproj", "{0C3E177B-3727-4130-9F16-DA4BD1CFA768}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

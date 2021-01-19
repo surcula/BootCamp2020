@@ -2,10 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Linq;
-using Asp_ModelGlobal.Entities;
+using System.Linq; 
 using System.Net.Http;
 using System.Text.Json;
+using Asp_ModelGlobal.Entities;
+using API_EntitiesForm;
 
 namespace Asp_ModelGlobal.Services
 {
@@ -21,7 +22,7 @@ namespace Asp_ModelGlobal.Services
         {
             using (_client)
             {
-                string contentJson = JsonSerializer.Serialize(new {novels});
+                string contentJson = JsonSerializer.Serialize(novels);
                 HttpContent httpContent = new StringContent(contentJson);
                 httpContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
 
@@ -57,18 +58,18 @@ namespace Asp_ModelGlobal.Services
         {
             using (_client)
             {
-
                 HttpResponseMessage httpResponseMessage = _client.GetAsync($"api/Novels/{id}").Result;
                 httpResponseMessage.EnsureSuccessStatusCode();
                 string json = httpResponseMessage.Content.ReadAsStringAsync().Result;
                 return JsonSerializer.Deserialize<Novels>(json, new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
             }
         }       
-        public void Update(int id,Novels n)
+        public void Update(int id,Novels novels)
         {
             using (_client)
             {
-                string json = JsonSerializer.Serialize(n);
+                novels.Id = id;
+                string json = JsonSerializer.Serialize(novels);                
                 HttpContent httpcontent = new StringContent(json);
                 httpcontent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/json");
 

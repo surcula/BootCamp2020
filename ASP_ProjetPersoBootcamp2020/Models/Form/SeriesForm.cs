@@ -3,25 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace API_EntitiesForm
+namespace ASP_ProjetPersoBootcamp2020.Models
 {
     public class SeriesForm
     {
-        public SeriesForm(string nom)
-        {
-            Nom = nom;
-        }
-        public SeriesForm()
-        {
-
-        }
-
-        public SeriesForm(int id, string nom)
-        {
-            Id = id;
-            Nom = nom;
-        }
-
         [Required]
         public int Id { get; set; }
         [Required]

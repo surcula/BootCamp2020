@@ -49,7 +49,7 @@ namespace Asp_ModelGlobal.Services
             };
         }
 
-        public void Update(User u)
+        public void Update(int id, User u)
         {
             using (_user)
             {
